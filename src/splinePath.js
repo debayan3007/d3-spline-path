@@ -4,6 +4,10 @@ export default function(dataTemp, intensity) {
         pathReturn = '',
         pathBuffer = '',
         dataLen = dataTemp.length;
+
+    if (intensity === undefined) {
+    	intensity = 1;
+    }
     for (; i < dataLen; i++) {
         if (!dataTemp[i].lastYPos && i !== 0) {
             pathBuffer = getSpline(splitters, intensity);
